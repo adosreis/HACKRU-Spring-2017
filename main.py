@@ -1,15 +1,20 @@
 from saving import load, open, get_characters
-from character import create_character
+from character import character, create_character
+
+binary_answer_list = ["Y", "y", "yes", "YES", "Yes", "No", "N", "NO", "no", "n"]
+
+def check_binary(answer):
+
+
 
 if __name__ == '__main__':
     open()
-    myList = ["Y","y","yes","YES","Yes","No","N","NO","no","n"]
     con = ""
-    while(not myList.Contains(con)):
+    while(not (con in binary_answer_list)):
         con = input("Continue? Y/N?")
-    if myList[:4].Contains(con):
+    if con in binary_answer_list[:4]:
         get_characters()
         load(input("Character name?"))
-    if myList[:-4].Contains(con):
+    if con in binary_answer_list[:-4]:
         create_character()
 
