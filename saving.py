@@ -27,6 +27,9 @@ def load(character_name):
             character_attributes["Intelligence"] = character.get("Intelligence")
             character_attributes["Agility"] = character.get("Agility")
             character_attributes["Luck"] = character.get("Luck")
+            create_character(character_attributes)
+            for event in root.findall("event"):
+
 
 
 

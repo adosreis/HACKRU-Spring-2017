@@ -1,6 +1,5 @@
-from saving import load, create_character, open
-
-def game(a):
+from saving import load, open, get_characters
+from character import create_character
 
 if __name__ == '__main__':
     open()
@@ -9,7 +8,7 @@ if __name__ == '__main__':
     while(not myList.Contains(con)):
         con = input("Continue? Y/N?")
     if myList[:4].Contains(con):
-        print()
+        get_characters()
         load(input("Character name?"))
     if myList[:-4].Contains(con):
         create_character()
