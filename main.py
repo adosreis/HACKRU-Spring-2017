@@ -3,10 +3,6 @@ from character import character, create_character
 
 binary_answer_list = ["Y", "y", "yes", "YES", "Yes", "No", "N", "NO", "no", "n"]
 
-def check_binary(answer):
-
-
-
 if __name__ == '__main__':
     open()
     con = ""

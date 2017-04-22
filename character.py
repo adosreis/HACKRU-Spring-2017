@@ -30,4 +30,7 @@ def create_character():
         a = input("How many points would you like to allocate to Agility")
         print("Description of Luck")
         l = input("How many points would you like to allocate to Luck")
-        if(input )
+        con = ""
+
+        while(not (con in binary_answer_list):
+            input("")
