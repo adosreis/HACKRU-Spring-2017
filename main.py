@@ -1,8 +1,9 @@
-from saving import load, create_character
+from saving import load, create_character, open
 
 def game(a):
 
 if __name__ == '__main__':
+    open()
     myList = ["Y","y","yes","YES","Yes","No","N","NO","no","n"]
     con = ""
     while(not myList.Contains(con)):
