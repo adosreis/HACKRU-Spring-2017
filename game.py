@@ -116,7 +116,7 @@ def play(c):
                 print("you died, sorry")
                 return
             x = interpretEvent(e)
-            if x:
+            if x and e:
                 history[i+1] = Events[int(x)]
                 e = Events[interpretEvent(history[i+1])]
 
@@ -129,7 +129,7 @@ def play(c):
                 print("you died, sorry")
                 return
             x = interpretEvent(e)
-            if x:
+            if x and e:
                 history[i + 1] = Events[int(x)]
                 e = Events[interpretEvent(history[i + 1])]
 
