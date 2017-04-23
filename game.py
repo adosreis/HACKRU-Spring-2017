@@ -59,8 +59,33 @@ Event("Strength","third",["You are approached by a naked woman with more wrinkle
 	 "Alarmed, the woman flails maniacally and percusses a series of dinks and dents into your car.",
  "Ask her to kindly remove her floppy self from your car.",
 	 "The woman murmurs, 'mhmm,' and kindly removes herself from your car.",
-	 "'No,' she groans.  You ask again.  She calls you a dick and rolls off the hood, across the street, and onto the sidewalk."],)]
+	 "'No,' she groans.  You ask again.  She calls you a dick and rolls off the hood, across the street, and onto the sidewalk."],)
 
+Event("Luck","fourth",["While traveling on a stray isolated road in the Pine Barrens, you spot a large rustic chest among the trees right off the road. Something tells you it might contain something valuable, but you because you didn't take a history class in college you have no idea.",
+"With the tools you have laying around in your car, do you dare open its contents?",
+"The chest won't budge, and its sharp edges and studded design cut your fingers as you continuously try to pry the container. You get angry and declare war on the hunk of junk.",
+"It's hammer time!"
+"Your hammer manages to crack the chest open, but as you keep pushing down spiders spill out of the tiny creases. You panic and it slams shut. Your hammer breaks and you give up on opening it.",
+"Wake up Mr. Freeman",
+"You manage to pry the chest open with a crowbar, but it wasn't easy. You see a pile of golden treasure inside that you manage to grab and take back with you. However, you are exhausted.",
+"Burn baby burn!",
+"You lather the chest in gasoline and light a match. The wooden shell of the ancient relic smokes and burns like a campfire until nothing remains. Your hopes of treasure are dying until you spot an engraved flask in the rubble and ashes. You take a sip and taste nasty whiskey; you feel better."],)
+
+
+Event("Perception","fifth",["Cracks begin to appear in the asphalt.  Jutting from one of these cracks is a pike with a severed goat head that you could have sworn watched you while you passed it. As eager as you were to shrug it off, your solace was cut short by yet another goat head on a pike.  The cracks are getting deeper.",
+"Your tire gets stuck in a fissure, and before you is another pike.  This time, you're being watched by a foam mannequin head, decorated with an uncanny wig and ping-pong balls with markered-on pupils for eyes.  You hear a rustling from a nearby bush on your right, and a figure stands in the window in the house on the left. What will you do?",
+"You pull the pike from the ground.  Fortunately it's heavy and it could make a good weapon to defend yourself with. You threaten the shaky bush.  A raccoon starts serpentining at you.",
+"The raccoon leaps into the sharp end of your pike. No guilt here; he did it to himself. You look back over to see that the man in the window is now hidden by blinds. Out of sight, out of mind, eh?  You fill the fissure under your tire with the mannequin head and raccoon, and it seems to be enough to get your tire out so you can move on and pretend this never happened.",
+"The raccoon scurries around your legs and you stumble back, trip over the rough terrain and fall. Your eyes follow the pike as it falls from your grasp and rolls to the feet of the man who was watching you from his window. 'My murals,' he says, 'do they frighten you?' You're too frightened to respond. 'They frighten many.' He says, leaning down to your arm with a syringe. The last thing you remember is the needle jabbing into your arm before you wake up in your car a few blocks down the street. The pikes are gone. Was it a dream? You feel like... this might not be the last you've seen of the goat heads and the shadowy man.",
+"Gun it.",
+"The tires screech and you feel the car lunging gently again and again.  You look over as the man is leaving the window.  The door begins to creak open and an amber light is cast partway across the street. The silhouette of the man narrowly creeps into frame just as the tire catches enough grip to send you wheeling down the road, away from the encounter.",
+"The tire rips, shreds, then pops.  You, uhh.... what was that noise...?",
+"Send your pal Dom out there to see if he can fix it.",
+"Dom manages to push the car with just enough momentum to set it free from its earthy clamp.  He runs up to the side door and gets back in as it's moving and you manage to escape.",
+"Dom manages to push the car with just enough momentum to set it free from its earthy clamp, but something's wrong. Dom's foot fell into a bear trap in one of the cracks in the road.  He collapses, grasping his ankle, then waves his bloodied hands as he quickly disappears in the rear view mirror.",
+"Ask the man in the window for help.",
+"The man comes to your aide.  He stands by your carside, still shrouded with enough shadow to conceal his face. 'What brings you here,' he asks. 'We're trying to go north, back to New York.' The man sighs. 'You may try,' he says, and as he speaks, the car starts to groan and shake.  'But there are some things you can not escape.' He turns and walks back towards the house.  The car now seems to be free, so you set forth.",
+"The man stands in the window for a good while as you contemplate your next move.  In a blink, he's gone.  You ask your friends if they saw where he went, and they saw it just as you did; he was there, and now he's gone.  The earth begins to tremble.  You jostle the door handles, but they refuse to budge. The car begins to sink.  The windows become consumed by the darkness of the surrounding earth, and as the last ounce of light disappears, you hear an unknown voice say 'You will soon understand your fate.'  You peel away the blackness as you open your eyes to find that you're alive, awake, and parked in the middle of the road.  There is no crack holding your tire in place, and so you leave in silence."],)]
 
 def interpretEvent(event):
     global char
