@@ -21,4 +21,4 @@ def fight(char,event):
     if total > ai_total:
         return random.randint(1,6)#broke
     else:
-        return None#broke
+        return 0#broke

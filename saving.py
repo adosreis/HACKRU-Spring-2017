@@ -124,7 +124,7 @@ class XML:
             new_char.append(h)
             self.root.append(new_char)
         print("trying to write")
-        self.tree.write(file)
+        self.tree.write(str(file))
 
 
 
