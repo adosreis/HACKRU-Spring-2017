@@ -3,11 +3,13 @@ from character import create_character,binary_answer_list
 from game import play
 from utils import clear
 
+Print("Escape: New Jersey")
+
 if __name__ == '__main__':
     root = XML()
     con = ""
     while(not (con in binary_answer_list)):
-        con = input("Continue? Y/N?")
+        con = input("Continue from last save? Y/N?")
     if con in binary_answer_list[:4]:
         clear()
         root.get_characters()

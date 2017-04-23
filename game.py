@@ -40,7 +40,7 @@ def play(c):
     char = c
     start = None
     if(history[0] is None):
-        print("a new story starts!")
+        print("Character creation is completed! Begin new adventure!")
 
     else:
         print("when we last left off!")
