@@ -30,6 +30,7 @@
             <event></event>
             <event></event>
         </history>
+        <health>100</health>
     </character>
     <companion>
         <name>Sean</name>
@@ -40,7 +41,9 @@
         <Intelligence>7</Intelligence>
         <Agility>10</Agility>
         <Luck>10</Luck>
-    </companion> <companion>
+        <Health>100</Health>
+    </companion>
+    <companion>
         <name>Dom</name>
         <Strength>10</Strength>
         <Perception>5</Perception>
@@ -49,8 +52,9 @@
         <Intelligence>10</Intelligence>
         <Agility>5</Agility>
         <Luck>8</Luck>
+        <Health>100</Health>
     </companion>
-     <companion>
+    <companion>
         <name>Worst</name>
         <Strength>0</Strength>
         <Perception>0</Perception>
@@ -59,5 +63,6 @@
         <Intelligence>0</Intelligence>
         <Agility>0</Agility>
         <Luck>0</Luck>
+        <Health>0</Health>
     </companion>
 </data>
