@@ -1,6 +1,7 @@
 from saving import XML
 from character import create_character,binary_answer_list
 from game import play
+from utils import clear
 
 
 
@@ -10,6 +11,7 @@ if __name__ == '__main__':
     while(not (con in binary_answer_list)):
         con = input("Continue? Y/N?")
     if con in binary_answer_list[:4]:
+        clear()
         root.get_characters()
         c = None
         while(not c):

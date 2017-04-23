@@ -10,7 +10,12 @@
         <Agility>10</Agility>
         <Luck>10</Luck>
         <history>
-            <event></event>
+            <event>
+                <attribute>Strength</attribute>
+                <name>name</name>
+                <text>1,2,3,4</text>
+                <events>2,3,4,5</events>
+            </event>
             <event></event>
             <event></event>
             <event></event>

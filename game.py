@@ -49,6 +49,9 @@ def play(c):
         print("when we last left off!")
         start = history[history.index(None)-1]
 
+def return_history():
+    return history
+
 
 
 
