@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 from character import character
 from game import Event, getHistory
+from utils import clear
 
 file = "save_data.xml"
 
@@ -44,6 +45,7 @@ class XML:
                 getHistory(loaded_history)
 
                 # print("Character not found")
+        clear()
         c = character(character_attributes)
         return c
 
