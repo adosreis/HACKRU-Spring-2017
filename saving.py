@@ -7,9 +7,10 @@ file = "save_data.xml"
 
 class XML:
     root = None
+    tree = None
     def __init__(self):
-        tree = ET.parse(file)
-        self.root = tree.getroot()
+        self.tree = ET.parse(file)
+        self.root = self.tree.getroot()
 
 
     def get_characters(self):
@@ -31,14 +32,14 @@ class XML:
                 character_attributes["Intelligence"] = int(char.find("Intelligence").text)
                 character_attributes["Agility"] = int(char.find("Agility").text)
                 character_attributes["Luck"] = int(char.find("Luck").text)
-                loaded_history = [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                                  None, None, None, None, None]
+                loaded_history = [None, None, None, None, None, None, None]
                 i = 0
                 for event in char.findall("event"):
                     name = event.find("name").text
                     text = event.find("text").text
                     events = event.find("events").text
-                    e = Event(name, enemies, text, events)
+                    attribute = event.find("attribute").text
+                    e = Event(attribute, name, text, events)
                     loaded_history[i] = e
                     i += 1
                 getHistory(loaded_history)
@@ -63,13 +64,14 @@ class XML:
                 i = 0
                 history = return_history()
                 for event in character.findall("event"):
+                    event.find("attribute").text = history[i].attribute_type
                     event.find("name").text = history[i].name
                     event.find("text").text = history[i].text
                     event.find("events").text = history[i].events
                     i += 1
                 character.set('updated', 'yes')
             else:
-                new_char = Element("character")
+                new_char = ET.Element("character")
                 new_char.find('name').text = char.name
                 character.find("Strength").text = char.skills["Strength"]
                 character.find("Perception").text = char.skills["Perception"]
@@ -80,11 +82,16 @@ class XML:
                 character.find("Luck").text = char.skills["Luck"]
                 i = 0
                 for e in return_history():
-                    new_event = Element("event")
+                    new_event = ET.Element("event")
                     new_event.find("name").text = e.name
                     new_event.find("text").text = e.text
                     new_event.find("events").text = e.events
                     i += 1
+                    new_char.find("history").append(new_event)
+                left = 7-i
+                for i in range (left):
+                    new_event = None
+                    new_char.find("history").append(new_event)
 
 
 

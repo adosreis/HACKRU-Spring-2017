@@ -5,22 +5,19 @@ from conversation import converse
 from character import character
 from utils import clear
 
-history = [None,None,None,None,None,None,None,None,None,None]
+history = [None,None,None,None,None,None,None]
 char = None
 
 class Event:
     attribute_type = ""
     name = ""
-    enemies = []
     text = {}
     events = {}
 
 
-
-    def __init__(self, attribute_type,name, enemies, text, events):
+    def __init__(self, attribute_type,name, text, events):
         self.attribute_type =attribute_type
         self.name = name
-        self.enemies = enemies
         self.text = text
         self.events = events
 
@@ -34,7 +31,7 @@ def interpretEvent(event):
 
 
 def getHistory(loaded_history):
-    for i in range(10):
+    for i in range(7):
         history[i] = loaded_history[i]
 
 def play(c):
