@@ -15,15 +15,15 @@
                 <text>1,2,3,4</text>
                 <events>2,3,4,5</events>
             </event>
-            <event/>
-            <event/>
-            <event/>
-            <event/>
-            <event/>
-            <event/>
-            <event/>
-            <event/>
-            <event/>
+            <event />
+            <event />
+            <event />
+            <event />
+            <event />
+            <event />
+            <event />
+            <event />
+            <event />
         </history>
     </character>
     <character>
@@ -36,27 +36,16 @@
         <Agility>0</Agility>
         <Luck>0</Luck>
         <history>
-            <event/>
-            <event/>
-            <event/>
-            <event/>
-            <event/>
-            <event/>
-            <event/>
-            <event/>
-            <event/>
-            <event/>
+            <event />
+            <event />
+            <event />
+            <event />
+            <event />
+            <event />
+            <event />
+            <event />
+            <event />
+            <event />
         </history>
     </character>
-    <character>
-        <name>hello</name>
-        <Strength>4</Strength>
-        <Perception>4</Perception>
-        <Endurance>4</Endurance>
-        <Charisma>4</Charisma>
-        <Intelligence>4</Intelligence>
-        <Agility>4</Agility>
-        <Luck>4</Luck>
-        <history/>
-    </character>
-</root>
+<character><name>hello\</name><Strength>0</Strength><Perception>0</Perception><Endurance>0</Endurance><Charisma>0</Charisma><Intelligence>0</Intelligence><Agility>0</Agility><Luck>0</Luck><history /></character></root>
