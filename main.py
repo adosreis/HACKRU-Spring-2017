@@ -3,8 +3,6 @@ from character import create_character,binary_answer_list
 from game import play
 from utils import clear
 
-
-
 if __name__ == '__main__':
     root = XML()
     con = ""
@@ -24,3 +22,4 @@ if __name__ == '__main__':
         clear()
         c = create_character()
     play(c)
+    root.save(c)

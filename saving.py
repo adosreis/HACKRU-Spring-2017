@@ -51,7 +51,6 @@ class XML:
 
 
     def save(self, char):
-        print("Quicksaving...")
         for character in self.root.iter("character"):
             if char.name == character.find('name').text:
                 character.find("Strength").text = char.skills["Strength"]
@@ -72,26 +71,50 @@ class XML:
                 character.set('updated', 'yes')
             else:
                 new_char = ET.Element("character")
-                new_char.find('name').text = char.name
-                character.find("Strength").text = char.skills["Strength"]
-                character.find("Perception").text = char.skills["Perception"]
-                character.find("Endurance").text = char.skills["Endurance"]
-                character.find("Charisma").text = char.skills["Charisma"]
-                character.find("Intelligence").text = char.skills["Intelligence"]
-                character.find("Agility").text = char.skills["Agility"]
-                character.find("Luck").text = char.skills["Luck"]
+                e = ET.Element('name')
+                e.text = char.name
+                new_char.append(e)
+                e = ET.Element("Strength")
+                e.text = char.skills["Strength"]
+                new_char.append(e)
+                e = ET.Element("Perception")
+                e.text = char.skills["Perception"]
+                new_char.append(e)
+                e = ET.Element("Endurance")
+                e.text = char.skills["Endurance"]
+                new_char.append(e)
+                e = ET.Element("Charisma")
+                e.text = char.skills["Charisma"]
+                new_char.append(e)
+                e = ET.Element("Intelligence")
+                e.text = char.skills["Intelligence"]
+                new_char.append(e)
+                e = ET.Element("Agility")
+                e.text = char.skills["Agility"]
+                new_char.append(e)
+                e = ET.Element("Luck")
+                e.text = char.skills["Luck"]
+                new_char.append(e)
                 i = 0
+                h = ET.Element("history")
                 for e in return_history():
                     new_event = ET.Element("event")
-                    new_event.find("name").text = e.name
-                    new_event.find("text").text = e.text
-                    new_event.find("events").text = e.events
+                    a = ET.Element("name")
+                    a.text = e.name
+                    new_event.append(a)
+                    a = ET.Element("text")
+                    a.text = e.text
+                    new_event.append(a)
+                    a = ET.Element("events")
+                    a.text = e.text
+                    new_event.append(a)
                     i += 1
-                    new_char.find("history").append(new_event)
+                    h.append(new_event)
                 left = 7-i
                 for i in range (left):
                     new_event = None
                     new_char.find("history").append(new_event)
+                new_char.append(h)
 
 
 
