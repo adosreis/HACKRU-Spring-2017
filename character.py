@@ -20,13 +20,13 @@ class character:
 
 def charcheck( attribute):
     global remaining_pts
-    ipt = int(input("How many points would you like to allocate to this"))
+    ipt = int(input("How many points would you like to allocate to this? "))
     leftover_pts = remaining_pts - ipt
     while ipt > 10 or ipt < 0 or leftover_pts < 0:
-        ipt = int(input("Please enter a valid number between 0 and 10. Make sure you have enough points to spend for this attribute."))
+        ipt = int(input("Please enter a valid number between 0 and 10. Make sure you have enough points to spend for this attribute... "))
         leftover_pts = remaining_pts - ipt
     remaining_pts = leftover_pts
-    print("You have {} points remaining".format(remaining_pts))
+    print("You have {} points remaining.".format(remaining_pts))
     return ipt
 
 
@@ -35,7 +35,7 @@ def create_character():
     happy = 0
     while(happy == 0):
         remaining_pts = 28
-        name = input("Hello what is your name?")
+        name = input("Hello what is your name? ")
 
         print("You have 28 skills points to spend.")
 
@@ -48,27 +48,27 @@ def create_character():
         print("Endurance determines your hitpoints and resistance to negative effects.")
         e = charcheck("Endurance")
 
-        print("Description of Charisma")
+        print("Charisma determines your ability to communicate with others.")
         c = charcheck("Charisma")
 
-        print("Description of Intelligence")
+        print("Intelligence determines your ability to learn and comprehend.")
         i = charcheck("Intelligence")
 
-        print("Description of Agility")
+        print("Agility determines you ability to move.")
         a = charcheck( "Agility")
 
-        print("Description of Luck")
+        print("Luck dictates the outcome of random events.")
         l = charcheck("Luck")
 
         # Print current values for review
-        print("Strength:     ",s)
-        print("Perception:   ",p)
-        print("Endurance:    ",e)
-        print("Charisma:     ",c)
-        print("Intelligence: ",i)
-        print("Agility:      ",a)
-        print("Luck:         ",l)
-        print("Total:        ",s+p+e+c+i+a+l)
+        print("Strength:    ",s)
+        print("Perception:  ",p)
+        print("Endurance:   ",e)
+        print("Charisma:    ",c)
+        print("Intelligence:",i)
+        print("Agility:     ",a)
+        print("Luck:        ",l)
+        print("Total:       ",s+p+e+c+i+a+l)
 
         con = None
         while(not (con in binary_answer_list)):
