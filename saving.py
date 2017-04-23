@@ -43,9 +43,7 @@ class XML:
                     i += 1
                 getHistory(loaded_history)
 
-            else:
                 # print("Character not found")
-                return None
         c = character(character_attributes)
         return c
 
