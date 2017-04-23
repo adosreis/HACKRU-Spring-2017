@@ -6,17 +6,17 @@ from utils import clear
 
 
 if __name__ == '__main__':
-    print("Escape: New Jersey")
+    print("Escape: New Jersey \n")
     root = XML()
     con = ""
     while(not (con in binary_answer_list)):
-        con = input("Continue from last save? Y/N?")
+        con = input("Continue from last save? Y/N? \n")
     if con in binary_answer_list[:4]:
         clear()
         root.get_characters()
         c = None
         while(not c):
-            c = root.load_character(input("Character name?"))
+            c = root.load_character(input("Character name? \n"))
             if(not c):
                 print("Character not found!")
                 root.get_characters()
