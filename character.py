@@ -16,16 +16,12 @@ class character:
 
 
 
-
-
-def charcheck( attribute):
+def charcheck(attribute):
     global remaining_pts
     ipt = int(input("How many points would you like to allocate to this? "))
-    leftover_pts = remaining_pts - ipt
-    while ipt > 10 or ipt < 0 or leftover_pts < 0:
+    while ipt > 10 or ipt < 0 or remaining_pts - ipt < 0:
         ipt = int(input("Please enter a valid number between 0 and 10. Make sure you have enough points to spend for this attribute... "))
-        leftover_pts = remaining_pts - ipt
-    remaining_pts = leftover_pts
+    remaining_pts = remaining_pts - ipt
     print("You have {} points remaining.".format(remaining_pts))
     return ipt
 
@@ -61,18 +57,18 @@ def create_character():
         l = charcheck("Luck")
 
         # Print current values for review
-        print("Strength:    ",s)
-        print("Perception:  ",p)
-        print("Endurance:   ",e)
-        print("Charisma:    ",c)
-        print("Intelligence:",i)
-        print("Agility:     ",a)
-        print("Luck:        ",l)
+        print("Strength:    ", s)
+        print("Perception:  ", p)
+        print("Endurance:   ", e)
+        print("Charisma:    ", c)
+        print("Intelligence:", i)
+        print("Agility:     ", a)
+        print("Luck:        ", l)
         print("Total:       ",s+p+e+c+i+a+l)
 
         con = None
         while(not (con in binary_answer_list)):
-            con = input("Are you happy with your traits?")
+            con = input("Are you happy with your traits? ")
         if con in binary_answer_list[:4]:
             happy = 1
         if con in binary_answer_list[:-4]:

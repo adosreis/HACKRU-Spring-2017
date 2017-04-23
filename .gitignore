@@ -1,2 +1,5 @@
+# ignore the following file types
+
 *.xml
 *.idea
+*.iml
