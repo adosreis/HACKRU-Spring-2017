@@ -17,6 +17,7 @@ remaining_pts = 0
 
 
 def charcheck(remaining_pts, attribute):
+    global remaining_pts
     ipt = ("How many points would you like to allocate to %s", attribute)
     leftover_pts = remaining_pts - ipt
     while ipt > 10 or ipt < 0 or leftover_pts < 0:
@@ -28,6 +29,7 @@ def charcheck(remaining_pts, attribute):
 
 
 def create_character():
+    global remaining_pts
     remaining_pts = 28
     happy = 0
     while(happy == 0):

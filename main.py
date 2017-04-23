@@ -1,22 +1,22 @@
-from saving import load_character, open, get_characters
-from character import create_character,binary_answer_listy
+from saving import XML
+from character import create_character,binary_answer_list
 from game import play
 
 
 
 if __name__ == '__main__':
-    open()
+    root = XML()
     con = ""
     while(not (con in binary_answer_list)):
         con = input("Continue? Y/N?")
     if con in binary_answer_list[:4]:
-        get_characters()
+        root.get_characters()
         c = None
         while(not c):
-            c = load_character(input("Character name?"))
+            c = root.load_character(input("Character name?"))
             if(not c):
                 print("Character not found!")
-                get_characters()
+                root.get_characters()
                 print("try again?")
     if con in binary_answer_list[:-4]:
         c = create_character()
