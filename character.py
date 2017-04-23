@@ -28,7 +28,7 @@ def charcheck(attribute):
         ipt = int(input("Please enter a valid number between 0 and 10. Make sure you have enough points to spend for this attribute... "))
         leftover_pts = remaining_pts - ipt
     remaining_pts = leftover_pts
-    print("You have {} points remaining.".format(remaining_pts))
+    print("You have {} points remaining.\n".format(remaining_pts))
     return ipt
 
 # run through each skill trait here
@@ -75,7 +75,7 @@ def create_character():
         # confirm with player if skills are okay
         con = None
         while(not (con in binary_answer_list)):
-            con = input("Are you happy with your traits?")
+            con = input("Are you happy with your traits? \n")
         if con in binary_answer_list[:4]:
             happy = 1
         if con in binary_answer_list[4:]:

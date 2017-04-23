@@ -87,7 +87,7 @@ Event("Perception","fifth",["Cracks begin to appear in the asphalt.  Jutting fro
 "The man comes to your aide.  He stands by your carside, still shrouded with enough shadow to conceal his face. 'What brings you here,' he asks. 'We're trying to go north, back to New York.' The man sighs. 'You may try,' he says, and as he speaks, the car starts to groan and shake.  'But there are some things you can not escape.' He turns and walks back towards the house.  The car now seems to be free, so you set forth.",
 "The man stands in the window for a good while as you contemplate your next move.  In a blink, he's gone.  You ask your friends if they saw where he went, and they saw it just as you did; he was there, and now he's gone.  The earth begins to tremble.  You jostle the door handles, but they refuse to budge. The car begins to sink.  The windows become consumed by the darkness of the surrounding earth, and as the last ounce of light disappears, you hear an unknown voice say 'You will soon understand your fate.'  You peel away the blackness as you open your eyes to find that you're alive, awake, and parked in the middle of the road.  There is no crack holding your tire in place, and so you leave in silence."]),
 
-Event("Intelligence","sixth",["You see an armchair in the middle of the road."
+Event("Intelligence","sixth",["You see an armchair in the middle of the road.",
 "That's... odd.",
 "You arm-wrestle the armchair.",
 "You win! The armchair becomes your companion.",
