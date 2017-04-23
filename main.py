@@ -1,8 +1,8 @@
-from saving import load, open, get_characters
-from character import character, create_character
+from saving import load_character, open, get_characters
+from character import create_character,binary_answer_listy
 from game import play
 
-binary_answer_list = ["Y", "y", "yes", "YES", "Yes", "No", "N", "NO", "no", "n"]
+
 
 if __name__ == '__main__':
     open()
@@ -13,7 +13,7 @@ if __name__ == '__main__':
         get_characters()
         c = None
         while(not c):
-            c = load(input("Character name?"))
+            c = load_character(input("Character name?"))
             if(not c):
                 print("Character not found!")
                 get_characters()

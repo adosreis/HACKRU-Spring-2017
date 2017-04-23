@@ -21,7 +21,7 @@ def get_characters():
 
 
 # loads a character (if it exists) and his history
-def load(character_name):
+def load_character(character_name):
     character_attributes = {"name": character_name, "Strength": 0, "Perception": 0, "Endurance": 0, "Charisma": 0,
                             "Intelligence": 0, "Agility": 0, "Luck": 0}
     for character in root.findall("character"):

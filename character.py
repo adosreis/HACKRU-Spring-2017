@@ -1,7 +1,8 @@
-from main import binary_answer_list
+#from main import binary_answer_list
 # call empty skills if starting new game
 # else load current skills
 
+binary_answer_list = ["Y", "y", "yes", "YES", "Yes", "No", "N", "NO", "no", "n"]
 
 class character:
     name = ""
@@ -62,7 +63,11 @@ def create_character():
         print("Agility:      %f",a)
         print("Luck:         %f",l)
 
-        con = input("Are you happy with your traits?")
+        con = None
+        while(not (con in binary_answer_list)):
+            con = input("Are you happy with your traits?")
+        if con in binary_answer_list[:4]:
+            happy = 1
+        if con in binary_answer_list[:-4]:
+            happy = 0
 
-        while(not (con in binary_answer_list):
-            input("")
