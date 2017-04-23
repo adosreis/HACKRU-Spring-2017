@@ -22,7 +22,7 @@ class XML:
     def load_character(self,character_name):
         character_attributes = {"name": character_name, "Strength": 0, "Perception": 0, "Endurance": 0, "Charisma": 0,"Intelligence": 0, "Agility": 0, "Luck": 0}
         for char in self.root.findall("character"):
-            if character_name is char.get('name'):
+            if character_name == char.find('name').text:
                 character_attributes["Strength"] = int(char.find("Strength").text)
                 character_attributes["Perception"] = int(char.find("Perception").text)
                 character_attributes["Endurance"] = int(char.find("Endurance").text)
@@ -43,9 +43,9 @@ class XML:
                     i += 1
                 getHistory(loaded_history)
 
-            #else:
+            else:
                 # print("Character not found")
-              #  return None
+                return None
         c = character(character_attributes)
         return c
 
