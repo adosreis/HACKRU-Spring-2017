@@ -25,5 +25,16 @@ Event1 = ["You encounter a half-empty bottle of vodka in the gutter.",
 "Hmmm... I think I can make a molotov cocktail out of that!",
 	"You create a molotov cocktail. Now what will you target..."]
 
+Event2 = ["The music playing from the radio is interrupted by sudden static sounds.",
+          "It comes and goes periodically, but you think you hear voices, like someone is trying to communicate with you.",
+          "The radio static makes you so angry that you decide to change the radio station. The static stops.",
+          "Keep listening.",
+            "You can't identify what the voices are saying, and they gradually disappear.",
+          "You turn up the volume to hear the sound louder.",
+            "The voices frighten you. You become a coward.",
+          "Twiddle with the radio dial in hopes of a better radio signal",
+            "You find a country music radio station and enjoy the music. You forget about the noises."]
+
+Event3 = []
 
 
