@@ -3,6 +3,7 @@
 # else load current skills
 
 binary_answer_list = ["Y", "y", "yes", "YES", "Yes", "No", "N", "NO", "no", "n"]
+remaining_pts = 0
 
 class character:
     name = ""
@@ -10,51 +11,52 @@ class character:
 
     def __init__(self, skills):
         self.name = skills.get("name")
-        self.skills = skills[:1]
+        self.skills = {key:skills[key] for key in ["Strength","Perception","Endurance","Charisma","Intelligence","Agility","Luck",]}
+        #print(self.skills)
 
 
-remaining_pts = 0
 
 
-def charcheck(remaining_pts, attribute):
+
+def charcheck( attribute):
     global remaining_pts
-    ipt = ("How many points would you like to allocate to %s", attribute)
+    ipt = int(input("How many points would you like to allocate to this"))
     leftover_pts = remaining_pts - ipt
     while ipt > 10 or ipt < 0 or leftover_pts < 0:
-        ipt = ("Please enter a valid number between 0 and 10. Make sure you have enough points to spend for this attribute.")
+        ipt = int(input("Please enter a valid number between 0 and 10. Make sure you have enough points to spend for this attribute."))
         leftover_pts = remaining_pts - ipt
     remaining_pts = leftover_pts
-    print("You have %f points remaining", remaining_pts)
+    print("You have {} points remaining".format(remaining_pts))
     return ipt
 
 
 def create_character():
     global remaining_pts
-    remaining_pts = 28
     happy = 0
     while(happy == 0):
+        remaining_pts = 28
         name = input("Hello what is your name?")
 
         print("Strength determines your power and carry capacity.")
-        s = charcheck(remaining_pts, "Strength")
+        s = charcheck("Strength")
 
         print("Perception allows you to notice things, open up new dialogue options on occasion, and how far away you start in random encounters.")
-        p = charcheck(remaining_pts, "Perception")
+        p = charcheck("Perception")
 
         print("Endurance determines your hitpoints and resistance to negative effects.")
-        e = charcheck(remaining_pts, "Endurance")
+        e = charcheck("Endurance")
 
         print("Description of Charisma")
-        c = charcheck(remaining_pts, "Charisma")
+        c = charcheck("Charisma")
 
         print("Description of Intelligence")
-        i = charcheck(remaining_pts, "Intelligence")
+        i = charcheck("Intelligence")
 
         print("Description of Agility")
-        a = charcheck(remaining_pts, "Agility")
+        a = charcheck( "Agility")
 
         print("Description of Luck")
-        l = charcheck(remaining_pts, "Luck")
+        l = charcheck("Luck")
 
         # Print current values for review
         print("Strength:     %f",s)

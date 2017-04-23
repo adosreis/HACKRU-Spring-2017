@@ -18,6 +18,6 @@ if __name__ == '__main__':
                 print("Character not found!")
                 root.get_characters()
                 print("try again?")
-    if con in binary_answer_list[:-4]:
+    if con in binary_answer_list[4:]:
         c = create_character()
     play(c)
