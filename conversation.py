@@ -1,3 +1,4 @@
+# define converse function to process event text and responses
 
 def converse(event):
     print(event[0])
@@ -14,7 +15,7 @@ def converse(event):
     if response == 3:
         print(event[8])
 
-
+# event texts used for reference
 
 Event1 = ["You encounter a half-empty bottle of vodka in the gutter.",
 "You're parched and, after all, you are in New Jersey, so a little bit of innebriation might make it a little bit better...",

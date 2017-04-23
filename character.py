@@ -6,6 +6,8 @@ from utils import clear
 binary_answer_list = ["Y", "y", "yes", "YES", "Yes", "No", "N", "NO", "no", "n"]
 remaining_pts = 0
 
+# create character class with empty variables
+
 class character:
     name = ""
     skills = {"Strength": 0, "Perception": 0, "Endurance": 0, "Charisma": 0, "Intelligence": 0, "Agility": 0, "Luck": 0}
@@ -17,8 +19,7 @@ class character:
 
 
 
-
-
+# function used to define all skill traits, using input attribute each time
 def charcheck(attribute):
     global remaining_pts
     ipt = int(input("How many points would you like to allocate to this? "))
@@ -30,7 +31,7 @@ def charcheck(attribute):
     print("You have {} points remaining.".format(remaining_pts))
     return ipt
 
-
+# run through each skill trait here
 def create_character():
     global remaining_pts
     happy = 0
@@ -71,6 +72,7 @@ def create_character():
         print("Luck:        ",l)
         print("Total:       ",s+p+e+c+i+a+l)
 
+        # confirm with player if skills are okay
         con = None
         while(not (con in binary_answer_list)):
             con = input("Are you happy with your traits?")
