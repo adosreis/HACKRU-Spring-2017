@@ -1,6 +1,7 @@
 #from main import binary_answer_list
 # call empty skills if starting new game
 # else load current skills
+from utils import clear
 
 binary_answer_list = ["Y", "y", "yes", "YES", "Yes", "No", "N", "NO", "no", "n"]
 remaining_pts = 0
@@ -18,7 +19,7 @@ class character:
 
 
 
-def charcheck( attribute):
+def charcheck(attribute):
     global remaining_pts
     ipt = int(input("How many points would you like to allocate to this? "))
     leftover_pts = remaining_pts - ipt
@@ -75,6 +76,7 @@ def create_character():
             con = input("Are you happy with your traits?")
         if con in binary_answer_list[:4]:
             happy = 1
-        if con in binary_answer_list[:-4]:
+        if con in binary_answer_list[4:]:
             happy = 0
+        clear()
 

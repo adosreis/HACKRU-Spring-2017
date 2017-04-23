@@ -2,11 +2,14 @@ import random
 from character import character
 from combat import fight
 from conversation import converse
+from character import character
+from utils import clear
 
-history = [None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None]
-character = None
+history = [None,None,None,None,None,None,None,None,None,None]
+char = None
 
 class Event:
+    attribute_type = ""
     name = ""
     enemies = []
     text = {}
@@ -14,30 +17,34 @@ class Event:
 
 
 
-    def __init__(self, name, enemies, text, events):
+    def __init__(self, attribute_type,name, enemies, text, events):
+        self.attribute_type =attribute_type
         self.name = name
         self.enemies = enemies
         self.text = text
         self.events = events
 
 def interpretEvent(event):
-    skill_picker = ["Strength","Perception","Endurance","Charisma","Intelligence","Agility","Luck"]
-    skill_roll = character.skills.get(random.choice(skill_picker))
-    if(random.randint(1,9) > skill_roll):
-        fight(event)
+    global char
+    if(random.randint(1,9) > char.skills.get(event.attribute_type)):
+        return fight(char,event)
     else:
-        converse(event)
+        return converse(char,event)
 
 
 
 def getHistory(loaded_history):
-    for i in range(20):
+    for i in range(10):
         history[i] = loaded_history[i]
 
 def play(c):
-    character = c
+    clear()
+    global char
+    char = c
+    start = None
     if(history[0] is None):
         print("a new story starts!")
+
     else:
         print("when we last left off!")
         start = history[history.index(None)-1]

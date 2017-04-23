@@ -19,5 +19,6 @@ if __name__ == '__main__':
                 root.get_characters()
                 print("try again?")
     if con in binary_answer_list[4:]:
+        clear()
         c = create_character()
     play(c)
