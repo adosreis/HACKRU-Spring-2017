@@ -15,7 +15,7 @@ class character:
     def __init__(self, inskills):
         self.name = inskills.get("name")
         self.skills = {key:inskills[key] for key in ["Strength","Perception","Endurance","Charisma","Intelligence","Agility","Luck",]}
-        print(self.skills)
+        print(self.name, self.skills)
 
 
 
@@ -81,5 +81,5 @@ def create_character():
         if con in binary_answer_list[4:]:
             happy = 0
         clear()
-        return character({"name":name,"Strength":s,"Perception":p,"Endurance":e,"Charisma":c,"Intelligence":i,"Agility":a,"Luck":l})
+    return character({"name":name,"Strength":s,"Perception":p,"Endurance":e,"Charisma":c,"Intelligence":i,"Agility":a,"Luck":l})
 

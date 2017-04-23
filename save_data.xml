@@ -48,4 +48,4 @@
             <event />
         </history>
     </character>
-<character><name>hello\</name><Strength>0</Strength><Perception>0</Perception><Endurance>0</Endurance><Charisma>0</Charisma><Intelligence>0</Intelligence><Agility>0</Agility><Luck>0</Luck><history /></character></root>
+<character><name>hello\</name><Strength>0</Strength><Perception>0</Perception><Endurance>0</Endurance><Charisma>0</Charisma><Intelligence>0</Intelligence><Agility>0</Agility><Luck>0</Luck><history /></character><character><name>julius</name><Strength>10</Strength><Perception>2</Perception><Endurance>2</Endurance><Charisma>2</Charisma><Intelligence>2</Intelligence><Agility>2</Agility><Luck>2</Luck><history /></character></root>

@@ -16,6 +16,6 @@ def fight(char,event):
         ai_total+= random.randint(0,10)
     # if player total exceeds AI total, player wins combat roll; otherwise player partakes in 'combat'
     if total > ai_total:
-        return event.events[3]
+        return random.randint(1,7)#broke
     else:
-        return event.events[4]
+        return None#broke

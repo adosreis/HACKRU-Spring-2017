@@ -8,6 +8,24 @@ from utils import clear
 history = [None,None,None,None,None,None,None]
 char = None
 
+
+
+# event class
+
+class Event:
+    attribute_type = ""
+    name = ""
+    text = []
+    events = []
+
+# event constructor
+
+    def __init__(self, attribute_type,name, text):
+        self.attribute_type =attribute_type
+        self.name = name
+        self.text = text
+
+
 Events = [Event("Intelligence","start",["You encounter a half-empty bottle of vodka in the gutter.",
 "You're parched and, after all, you are in New Jersey, so a little bit of innebriation might make it a little bit better...",
 "The sight of it reminds you of your father.  You see his face in the shimmer of the glass and realize that it's your reflection.  Blinded by rage, you plunge your fist into the bottle, shattering the glass along with your composure. You suck it up and move on.",
@@ -16,7 +34,7 @@ Events = [Event("Intelligence","start",["You encounter a half-empty bottle of vo
 "Shots, shots, shots for everyone!",
 	"Those shots hit you and your friends a little too hard. Your party all becomes plastered.",
 "Hmmm... I think I can make a molotov cocktail out of that!",
-	"You create a molotov cocktail. Now what will you target..."],[]),
+	"You create a molotov cocktail. Now what will you target..."],),
 
 Event("Charisma","second",["The music playing from the radio is interrupted by sudden static sounds.",
  "It comes and goes periodically, but you think you hear voices, like someone is trying to communicate with you.",
@@ -26,7 +44,7 @@ Event("Charisma","second",["The music playing from the radio is interrupted by s
 "You turn up the volume to hear the sound louder.",
 "The voices frighten you. You become a coward.",
 "Twiddle with the radio dial in hopes of a better radio signal",
-"You find a country music radio station and enjoy the music. You forget about the noises."],[]),
+"You find a country music radio station and enjoy the music. You forget about the noises."],),
 
 Event("Strength","third",["You are approached by a naked woman with more wrinkles in her skin than you imagined possible.  Visibly delusional, she stumbles onto the hood of your car and begins drooling on the windshield.  She seems to be falling asleep.",
 "What do you do?",
@@ -41,23 +59,8 @@ Event("Strength","third",["You are approached by a naked woman with more wrinkle
 	 "Alarmed, the woman flails maniacally and percusses a series of dinks and dents into your car.",
  "Ask her to kindly remove her floppy self from your car.",
 	 "The woman murmurs, 'mhmm,' and kindly removes herself from your car.",
-	 "'No,' she groans.  You ask again.  She calls you a dick and rolls off the hood, across the street, and onto the sidewalk."],[])]
+	 "'No,' she groans.  You ask again.  She calls you a dick and rolls off the hood, across the street, and onto the sidewalk."],)]
 
-# event class
-
-class Event:
-    attribute_type = ""
-    name = ""
-    text = []
-    events = []
-
-# event constructor
-
-    def __init__(self, attribute_type,name, text, events):
-        self.attribute_type =attribute_type
-        self.name = name
-        self.text = text
-        self.events = events
 
 def interpretEvent(event):
     global char
@@ -73,25 +76,40 @@ def getHistory(loaded_history):
         history[i] = loaded_history[i]
 
 def play(c):
+    if c ==None:
+        print("You're nobody!")
+        return
     clear()
     global char, history
     char = c
     start = None
-    print(c)
     if(history[0] is None):
         print("Character creation is completed! Begin new adventure!")
+        e = Events[0]
         for i in range(0,7):
-            e = Events[0]
-            history[i] = interpretEvent(e)
+            if e == None:
+                print("you died, sorry")
+                return
+            x = interpretEvent(e)
+            if x:
+                history[i+1] = Events[int(x)]
+                e = Events[interpretEvent(history[i+1])]
+
 
     else:
         print("when we last left off!")
-        start = history[history.index(None)-1]
+        e = history[history.index(None)-1]
+        for i in range(history.index(None)-1, 7):
+            if e == None:
+                print("you died, sorry")
+                return
+            x = interpretEvent(e)
+            if x:
+                history[i + 1] = Events[int(x)]
+                e = Events[interpretEvent(history[i + 1])]
 
 
 def return_history():
     return history
-
-
 
 
