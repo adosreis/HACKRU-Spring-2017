@@ -100,7 +100,7 @@ Event("Intelligence","sixth",["You see an armchair in the middle of the road.",
 "You have a new armchair, but... it's full of lice. You and your companions take one additional point of damage each time you take damage.",
 "Arm yourself. It could be preparing an armchair army.",
 "You take the first shot and blow a hole right through it's cushion! This must have been an armchair scout, though, so you decide to escape quickly before armchair reinforcements arrive.",
-"The armchair was a distraction!  Both sides of the car are being swarmed by armchairs, rolling down the hills.  It's really hard to understand what's happening, but the car takes some heavy damage as you escape the bizarre encounter."])
+"The armchair was a distraction!  Both sides of the car are being swarmed by armchairs, rolling down the hills.  It's really hard to understand what's happening, but the car takes some heavy damage as you escape the bizarre encounter."]),
 
 Event("Agility","seventh",["Your travels bring you to New Brunswick, the home of the prestigeous Rutgers University. You don't know what compelled you come back here. You get out of the vehicle to take a look around at its historic College Avenue Campus.",
 "You turn the corner of a building and are confronted by the scarlet knight himself.",
@@ -108,7 +108,7 @@ Event("Agility","seventh",["Your travels bring you to New Brunswick, the home of
 "Let's stay away from him, this is his turf",
 "You run run run as fast as you can. He chases you off his land laughing as you sprint, panicking all the way back to the car. You drive away in a skid.",
 "Show him your Scarlet Pride in hopes of making a friend.",
-"You do your best to convince him how much scarlet you bleed. You start chanting RuuRaah! You swear you're B1G 10. You wish you had your diploma on you. He knows you speak the truth and invites you to his quarters for a malt and meal dinner!"
+"You do your best to convince him how much scarlet you bleed. You start chanting RuuRaah! You swear you're B1G 10. You wish you had your diploma on you. He knows you speak the truth and invites you to his quarters for a malt and meal dinner!",
 "Feed his horse, it's probably starving",
 "As soon as you pull an apple out of your bag, his horse rushes over to you. The knight loses control and falls off, but he looks okay! The horse scurries away with apple in mouth, with the scarlet knight yelling and chasing it from behind. You feel guilty for this."])]
 

@@ -5,6 +5,7 @@ import random
 # define fight function
 def fight(char,event):
     clear()
+    print("you done messed up now bruh, you gotta fight")
     print(event.text[2])
     skill_of_combat =[]
     skill_picker = ["Strength", "Perception", "Endurance", "Charisma", "Intelligence", "Agility", "Luck"]
@@ -19,6 +20,8 @@ def fight(char,event):
         ai_total+= random.randint(0,10)
     # if player total exceeds AI total, player wins combat roll; otherwise player partakes in 'combat'
     if total > ai_total:
+        print("ok you win!")
         return random.randint(1,6)#broke
     else:
+        print("you lost")
         return 0#broke

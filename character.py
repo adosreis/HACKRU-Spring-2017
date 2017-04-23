@@ -22,7 +22,12 @@ class character:
 # function used to define all skill traits, using input attribute each time
 def charcheck(attribute):
     global remaining_pts
-    ipt = int(input("How many points would you like to allocate to this? "))
+    s = input("How many points would you like to allocate to this? ")
+    if s.isnumeric():
+        ipt = int(s)
+    else:
+        s = input("Please enter a int!")
+        ipt = int(s)
     leftover_pts = remaining_pts - ipt
     while ipt > 10 or ipt < 0 or leftover_pts < 0:
         ipt = int(input("Please enter a valid number between 0 and 10. Make sure you have enough points to spend for this attribute... "))
