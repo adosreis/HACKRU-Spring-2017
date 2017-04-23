@@ -11,8 +11,8 @@ char = None
 class Event:
     attribute_type = ""
     name = ""
-    text = {}
-    events = {}
+    text = []
+    events = []
 
 
     def __init__(self, attribute_type,name, text, events):
@@ -36,16 +36,17 @@ def getHistory(loaded_history):
 
 def play(c):
     clear()
-    global char
+    global char, history
     char = c
     start = None
+    print(c)
     if(history[0] is None):
         print("Character creation is completed! Begin new adventure!")
 
     else:
         print("when we last left off!")
         start = history[history.index(None)-1]
-        
+
 
 def return_history():
     return history
