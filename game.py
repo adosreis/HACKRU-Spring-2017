@@ -28,14 +28,14 @@ Event("Charisma","second",["The music playing from the radio is interrupted by s
 "Twiddle with the radio dial in hopes of a better radio signal",
 "You find a country music radio station and enjoy the music. You forget about the noises."],[]),
 
-Event("You are approached by a naked woman with more wrinkles in her skin than you imagined possible.  Visibly delusional, she stumbles onto the hood of your car and begins drooling on the windshield.  She seems to be falling asleep.",
+Event("Strength","third",["You are approached by a naked woman with more wrinkles in her skin than you imagined possible.  Visibly delusional, she stumbles onto the hood of your car and begins drooling on the windshield.  She seems to be falling asleep.",
 "What do you do?",
 "You ball your fists, ready to give this lady a faceful of knuckle.  The way she's licking your windshield just rubs you the wrong way, and she should learn a thing or two about... whatever it is she's doing to you and your car.",
 	 "You sock her right in the side of the head with such force that she flops like a fish with a moan that can only be described as goat-like.  Oh! And it looks like you managed to knock out one of her gold teeth! Score! You pocket it and return to the car.",
 	 "As you approach her, the nude crude and lewd lady bucks back and kicks one of your teeth out.  While you're dizzy, she quickly stumbles away and what's better.  You've got a lisp now, dick.",
 "Turn on the windshield wipers.",
 	 "You wipe her arms and face off your windshield, and the rest of her body follows suit and flops to your doorside. She may be dead. But you've got more important things to do than worry about whether or not someone just died on your car.",
-	 "You manage to slap her awake with your persistance, but the crazy old bat grabs the wipers and snaps them right off your car!  Where in the world did this brute strength come from?  You're not willing to find out. Your driver slams on the petal and speeds away.  The crazy old lady tumbles to the side, and the wipers go with her.
+	 "You manage to slap her awake with your persistance, but the crazy old bat grabs the wipers and snaps them right off your car!  Where in the world did this brute strength come from?  You're not willing to find out. Your driver slams on the petal and speeds away.  The crazy old lady tumbles to the side, and the wipers go with her.",
  "Honk the horn!",
 	 "The woman snaps back to life and hisses wildly, then leaps into the bushes.",
 	 "Alarmed, the woman flails maniacally and percusses a series of dinks and dents into your car.",
@@ -80,6 +80,9 @@ def play(c):
     print(c)
     if(history[0] is None):
         print("Character creation is completed! Begin new adventure!")
+        for i in range(0,7):
+            e = Events[0]
+            history[i] = interpretEvent(e)
 
     else:
         print("when we last left off!")

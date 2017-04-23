@@ -2,6 +2,7 @@ from character import character
 import random
 # define fight function
 def fight(char,event):
+    print(event.text[2])
     skill_of_combat =[]
     skill_picker = ["Strength", "Perception", "Endurance", "Charisma", "Intelligence", "Agility", "Luck"]
     # pick 3 random skills from character traits
