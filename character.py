@@ -79,4 +79,5 @@ def create_character():
         if con in binary_answer_list[4:]:
             happy = 0
         clear()
+        return character({"name":name,"Strength":s,"Perception":p,"Endurance":e,"Charisma":c,"Intelligence":i,"Agility":a,"Luck":l})
 

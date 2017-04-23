@@ -36,8 +36,8 @@ class XML:
                 i = 0
                 for event in char.findall("event"):
                     name = event.find("name").text
-                    text = event.find("text").text
-                    events = event.find("events").text
+                    text = event.find("text").text.split()
+                    events = event.find("events").text.split()
                     attribute = event.find("attribute").text
                     e = Event(attribute, name, text, events)
                     loaded_history[i] = e
@@ -51,53 +51,61 @@ class XML:
 
 
     def save(self, char):
+        print("Quicksaving...")
         for character in self.root.iter("character"):
+            print("a")
             if char.name == character.find('name').text:
-                character.find("Strength").text = char.skills["Strength"]
-                character.find("Perception").text = char.skills["Perception"]
-                character.find("Endurance").text = char.skills["Endurance"]
-                character.find("Charisma").text = char.skills["Charisma"]
-                character.find("Intelligence").text = char.skills["Intelligence"]
-                character.find("Agility").text = char.skills["Agility"]
-                character.find("Luck").text = char.skills["Luck"]
+                print("b")
+                character.find("Strength").text = str(char.skills["Strength"])
+                character.find("Perception").text = str(char.skills["Perception"])
+                character.find("Endurance").text = str(char.skills["Endurance"])
+                character.find("Charisma").text = str(char.skills["Charisma"])
+                character.find("Intelligence").text = str(char.skills["Intelligence"])
+                character.find("Agility").text = str(char.skills["Agility"])
+                character.find("Luck").text = str(char.skills["Luck"])
                 i = 0
                 history = return_history()
                 for event in character.findall("event"):
+                    print("c")
                     event.find("attribute").text = history[i].attribute_type
                     event.find("name").text = history[i].name
                     event.find("text").text = history[i].text
                     event.find("events").text = history[i].events
                     i += 1
                 character.set('updated', 'yes')
-            else:
-                new_char = ET.Element("character")
-                e = ET.Element('name')
-                e.text = char.name
-                new_char.append(e)
-                e = ET.Element("Strength")
-                e.text = char.skills["Strength"]
-                new_char.append(e)
-                e = ET.Element("Perception")
-                e.text = char.skills["Perception"]
-                new_char.append(e)
-                e = ET.Element("Endurance")
-                e.text = char.skills["Endurance"]
-                new_char.append(e)
-                e = ET.Element("Charisma")
-                e.text = char.skills["Charisma"]
-                new_char.append(e)
-                e = ET.Element("Intelligence")
-                e.text = char.skills["Intelligence"]
-                new_char.append(e)
-                e = ET.Element("Agility")
-                e.text = char.skills["Agility"]
-                new_char.append(e)
-                e = ET.Element("Luck")
-                e.text = char.skills["Luck"]
-                new_char.append(e)
-                i = 0
-                h = ET.Element("history")
-                for e in return_history():
+                break
+        else:
+            print("d")
+            new_char = ET.Element("character")
+            e = ET.Element('name')
+            e.text = str(char.name)
+            new_char.append(e)
+            e = ET.Element("Strength")
+            e.text = str(char.skills["Strength"])
+            new_char.append(e)
+            e = ET.Element("Perception")
+            e.text = str(char.skills["Perception"])
+            new_char.append(e)
+            e = ET.Element("Endurance")
+            e.text = str(char.skills["Endurance"])
+            new_char.append(e)
+            e = ET.Element("Charisma")
+            e.text = str(char.skills["Charisma"])
+            new_char.append(e)
+            e = ET.Element("Intelligence")
+            e.text = str(char.skills["Intelligence"])
+            new_char.append(e)
+            e = ET.Element("Agility")
+            e.text = str(char.skills["Agility"])
+            new_char.append(e)
+            e = ET.Element("Luck")
+            e.text = str(char.skills["Luck"])
+            new_char.append(e)
+            i = 0
+            h = ET.Element("history")
+            for e in return_history():
+                print("e")
+                if e:
                     new_event = ET.Element("event")
                     a = ET.Element("name")
                     a.text = e.name
@@ -110,11 +118,13 @@ class XML:
                     new_event.append(a)
                     i += 1
                     h.append(new_event)
-                left = 7-i
-                for i in range (left):
-                    new_event = None
-                    new_char.find("history").append(new_event)
-                new_char.append(h)
+            left = 7-i
+            #for i in range (left):
+               # h.append(Event(new_event))
+            new_char.append(h)
+            self.root.append(new_char)
+        print("trying to write")
+        self.tree.write(file)
 
 
 
