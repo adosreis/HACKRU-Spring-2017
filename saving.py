@@ -13,8 +13,8 @@ class XML:
 
     def get_characters(self):
         if self.root:
-            for character in self.root.findall('character'):
-                print(character.get("name"))
+            for char in self.root.findall('character'):
+                print(char.find("name").text)
 
 
 
@@ -23,21 +23,21 @@ class XML:
         character_attributes = {"name": character_name, "Strength": 0, "Perception": 0, "Endurance": 0, "Charisma": 0,"Intelligence": 0, "Agility": 0, "Luck": 0}
         for char in self.root.findall("character"):
             if character_name is char.get('name'):
-                character_attributes["Strength"] = char.get("Strength")
-                character_attributes["Perception"] = char.get("Perception")
-                character_attributes["Endurance"] = char.get("Endurance")
-                character_attributes["Charisma"] = char.get("Charisma")
-                character_attributes["Intelligence"] = char.get("Intelligence")
-                character_attributes["Agility"] = char.get("Agility")
-                character_attributes["Luck"] = char.get("Luck")
+                character_attributes["Strength"] = int(char.find("Strength").text)
+                character_attributes["Perception"] = int(char.find("Perception").text)
+                character_attributes["Endurance"] = int(char.find("Endurance").text)
+                character_attributes["Charisma"] = int(char.find("Charisma").text)
+                character_attributes["Intelligence"] = int(char.find("Intelligence").text)
+                character_attributes["Agility"] = int(char.find("Agility").text)
+                character_attributes["Luck"] = int(char.find("Luck").text)
                 loaded_history = [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,
                                   None, None, None, None, None]
                 i = 0
                 for event in char.findall("event"):
-                    name = event.get("name")
-                    enemies = event.get("enemies")
-                    text = event.get("text")
-                    events = event.get("events")
+                    name = event.find("name").text
+                    enemies = event.find("enemies").text
+                    text = event.find("text").text
+                    events = event.find("events").text
                     e = Event(name, enemies, text, events)
                     loaded_history[i] = e
                     i += 1

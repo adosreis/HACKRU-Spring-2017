@@ -9,10 +9,10 @@ class character:
     name = ""
     skills = {"Strength": 0, "Perception": 0, "Endurance": 0, "Charisma": 0, "Intelligence": 0, "Agility": 0, "Luck": 0}
 
-    def __init__(self, skills):
-        self.name = skills.get("name")
-        self.skills = {key:skills[key] for key in ["Strength","Perception","Endurance","Charisma","Intelligence","Agility","Luck",]}
-        #print(self.skills)
+    def __init__(self, inskills):
+        self.name = inskills.get("name")
+        self.skills = {key:inskills[key] for key in ["Strength","Perception","Endurance","Charisma","Intelligence","Agility","Luck",]}
+        print(self.skills)
 
 
 
