@@ -37,6 +37,8 @@ def create_character():
         remaining_pts = 28
         name = input("Hello what is your name?")
 
+        print("You have 28 skills points to spend.")
+
         print("Strength determines your power and carry capacity.")
         s = charcheck("Strength")
 
@@ -59,13 +61,14 @@ def create_character():
         l = charcheck("Luck")
 
         # Print current values for review
-        print("Strength:     %f",s)
-        print("Perception:   %f",p)
-        print("Endurance:    %f",e)
-        print("Charisma:     %f",c)
-        print("Intelligence: %f",i)
-        print("Agility:      %f",a)
-        print("Luck:         %f",l)
+        print("Strength:     ",s)
+        print("Perception:   ",p)
+        print("Endurance:    ",e)
+        print("Charisma:     ",c)
+        print("Intelligence: ",i)
+        print("Agility:      ",a)
+        print("Luck:         ",l)
+        print("Total:        ",s+p+e+c+i+a+l)
 
         con = None
         while(not (con in binary_answer_list)):
